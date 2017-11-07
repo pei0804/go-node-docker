@@ -11,6 +11,8 @@ RUN curl -O https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz | s
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg \
     | apt-key add && echo "deb https://dl.yarnpkg.com/debian/ stable main" \
     | tee /etc/apt/sources.list.d/yarn.list \
-    && apt-get update \
-    && apt-get install yarn \
+    && apt-get update -y \
+    && apt-get install -y yarn \
+    python \
+    jq \
     && rm -rf /var/lib/apt/lists/*
